@@ -1,7 +1,8 @@
-import React, { useState }  from "react"
+import React, { useState } from "react"
 import Card from "../UI/Card"
 import styles from './AddUser.module.css'
 import Button from '../UI/Button'
+import Wrapper from "../Helper/Wrappe"
 import ErrorModel from "../UI/ErrorModel"
 const AddUser = (props) => {
     const [enteredUsername, setEnteredUsername] = useState('')
@@ -42,7 +43,7 @@ const AddUser = (props) => {
         setError(null)
     }
     return (
-        <div>
+        <Wrapper>
             {error && <ErrorModel
                 title={error.title}
                 message={error.message}
@@ -57,7 +58,7 @@ const AddUser = (props) => {
                 <Button type='submit'>Add User</Button>
                 </form>
                 </Card>
-        </div>
+        </Wrapper>
     )
 }
 
